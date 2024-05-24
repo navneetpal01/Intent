@@ -1,5 +1,6 @@
 package com.example.intents
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -40,7 +41,9 @@ class MainActivity : ComponentActivity(){
                 ){
                     Button(
                         onClick = { 
-                            
+                            Intent(applicationContext,SecondActivity::class.java).also {
+                                startActivity(it)
+                            }
                         }
                     ) {
                         Text(text = "Click Me")
