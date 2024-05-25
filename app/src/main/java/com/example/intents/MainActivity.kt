@@ -50,9 +50,7 @@ class MainActivity : ComponentActivity(){
                     viewModel.uri?.let {
 
                     AsyncImage(
-                        modifier = Modifier
-                            .size(300.dp),
-                        model = it,
+                        model = viewModel.uri,
                         contentDescription = "Image"
                     )
                     }
@@ -72,6 +70,7 @@ class MainActivity : ComponentActivity(){
     }
 
     //Enable launch mode from the manifest
+    //Do not works will work on it latter
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
         val uri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
