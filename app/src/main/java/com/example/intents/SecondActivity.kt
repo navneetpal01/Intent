@@ -30,15 +30,18 @@ class SecondActivity : ComponentActivity() {
                     Text(text = "Second Activity")
                     Button(
                         onClick = {
-                            //Open YouTube App
-                            Intent(Intent.ACTION_MAIN).also {
-                                it.`package` = "com.google.android.youtube"
-                                try {
-                                    startActivity(it)
-                                }catch (e : ActivityNotFoundException){
-                                    e.printStackTrace()
-                                }
-                                startActivity(it)
+//                            Open YouTube App It's Implicit Intent
+//                            Intent(Intent.ACTION_MAIN).also {
+//                                it.`package` = "com.google.android.youtube"
+//                                try {
+//                                    startActivity(it)
+//                                }catch (e : ActivityNotFoundException){
+//                                    e.printStackTrace()
+//                                }
+//                                startActivity(it)
+//                            }
+                            Intent(Intent.ACTION_SEND).apply {
+                                type = "text/plain"
                             }
                         }
                     ) {

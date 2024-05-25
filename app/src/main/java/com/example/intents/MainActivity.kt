@@ -20,8 +20,8 @@ import com.example.intents.ui.theme.IntentsTheme
 
 class MainActivity : ComponentActivity(){
     //Types of Intents
-    //1- Implicit - used in our own apps
-    //2- Explicit - to launch an activity of another app
+    //1- Implicit - Implicit intents are more general. Instead of specifying a particular component, they declare a generic action (like "view" or "dial") that needs to be performed
+    //2- Explicit - to launch an activity of another  our own or another app
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge(
