@@ -40,9 +40,14 @@ class SecondActivity : ComponentActivity() {
 //                                }
 //                                startActivity(it)
 //                            }
-                            Intent(Intent.ACTION_SEND).apply {
+                            val intent = Intent(Intent.ACTION_SEND).apply {
                                 type = "text/plain"
-                                putExtra()
+                                putExtra(Intent.EXTRA_EMAIL, arrayOf("test@test.com"))
+                                putExtra(Intent.EXTRA_SUBJECT, "This is my subject")
+                                putExtra(Intent.EXTRA_TEXT,"This is the content of my email")
+                            }
+                            if (intent.resolveActivity(packageManager) != null){
+                                startActivity(intent)
                             }
                         }
                     ) {
