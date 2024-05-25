@@ -42,6 +42,7 @@ class SecondActivity : ComponentActivity() {
 //                            }
                             Intent(Intent.ACTION_SEND).apply {
                                 type = "text/plain"
+                                putExtra()
                             }
                         }
                     ) {
